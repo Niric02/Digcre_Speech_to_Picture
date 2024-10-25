@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 import discord
+import discord.ext.commands as commands
 import discordbot.Discord as discbot
 
 if __name__ == "__main__":
@@ -11,8 +12,11 @@ if __name__ == "__main__":
     intents = discord.Intents.default()
     intents.message_content = True
 
-    bot = discbot.DiscordBot(intents)
+    bot = commands.Bot(command_prefix='!', intents=intents)
+
+    bot.add_cog(discbot.DiscordBot(bot))
 
     bot.run(TOKEN)
+
 
 
