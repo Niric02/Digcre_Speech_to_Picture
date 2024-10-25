@@ -3,13 +3,12 @@ import sys
 import discord
 from pydub import AudioSegment
 from discord.ext import commands
-from speech_recogniser.Transcriber import Transcriber
 
 
 class DiscordBot(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot,transcriber):
         self.bot = bot
-        self.transcriber = Transcriber()
+        self.transcriber = transcriber
         AudioSegment.ffmpeg = "C:"
 
     connections = {}
@@ -47,7 +46,7 @@ class DiscordBot(commands.Cog):
             await ctx.send("I'm not in a voice channel!")
 
     @commands.command(name='stop_recording')
-    async def stop_recording(self,ctx):
+    async def stop_recording(self, ctx):
         if ctx.guild.id in self.connections:  # Check if the guild is in the cache.
             vc = self.connections[ctx.guild.id]
             vc.stop_recording()  # Stop recording, and call the callback (once_done).
@@ -62,10 +61,17 @@ class DiscordBot(commands.Cog):
             for user_id, audio in sink.audio_data.items()
         ]
         await sink.vc.disconnect()  # Disconnect from the voice channel.
-        files = [discord.File(audio.file, f"{user_id}.{sink.encoding}") for user_id, audio in sink.audio_data.items()]  # List down the files.
-        text = []
-        for audio in files:
-            print(type(audio.fp))
-            audio_segment = AudioSegment.from_file(audio.fp)
-        await channel.send(f"finished recording audio for: {', '.join(recorded_users)}. \n"
-                           f"{text}")  # Send a message with the accumulated files.
+        files = [discord.File(audio.file, f"{user_id}.{sink.encoding}") for user_id, audio in
+                 sink.audio_data.items()]  # List down the files.
+        text = {}
+        for user_id,audio in sink.audio_data.items():
+            file_path = os.path.join(".", f"{user_id}.wav")  # Save as WAV files
+
+            # Save the audio data to a .wav file
+            with open(file_path, "wb") as f:
+                f.write(audio.file.getbuffer())  # Write the byte data to the file
+
+            text[user_id] = self.transcriber.from_file(file_path)
+            print(text)
+        await channel.send(f"finished recording audio for: {', '.join(recorded_users)}. \n "
+                           f"the following text was transcribed: {text}")  # Send a message with the accumulated files.
