@@ -1,6 +1,7 @@
 import os
 import sys
 import discord
+from pydub import AudioSegment
 from discord.ext import commands
 from speech_recogniser.Transcriber import Transcriber
 
@@ -8,6 +9,8 @@ from speech_recogniser.Transcriber import Transcriber
 class DiscordBot(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.transcriber = Transcriber()
+        AudioSegment.ffmpeg = "C:"
 
     connections = {}
 
@@ -52,14 +55,17 @@ class DiscordBot(commands.Cog):
         else:
             await ctx.respond("I am currently not recording here.")  # Respond with this if we aren't recording.
 
-    async def once_done(self, sink, channel: discord.TextChannel,
+    async def once_done(self, sink: discord.sinks, channel: discord.TextChannel,
                         *args):  # Our voice client already passes these in.
         recorded_users = [  # A list of recorded users
             f"<@{user_id}>"
             for user_id, audio in sink.audio_data.items()
         ]
         await sink.vc.disconnect()  # Disconnect from the voice channel.
-        files = [discord.File(audio.file, f"{user_id}.{sink.encoding}") for user_id, audio in
-                 sink.audio_data.items()]  # List down the files.
-        await channel.send(f"finished recording audio for: {', '.join(recorded_users)}.",
-                           files=files)  # Send a message with the accumulated files.
+        files = [discord.File(audio.file, f"{user_id}.{sink.encoding}") for user_id, audio in sink.audio_data.items()]  # List down the files.
+        text = []
+        for audio in files:
+            print(type(audio.fp))
+            audio_segment = AudioSegment.from_file(audio.fp)
+        await channel.send(f"finished recording audio for: {', '.join(recorded_users)}. \n"
+                           f"{text}")  # Send a message with the accumulated files.
