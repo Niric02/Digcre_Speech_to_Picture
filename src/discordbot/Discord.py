@@ -6,7 +6,7 @@ from discord.ext import commands
 
 
 class DiscordBot(commands.Cog):
-    def __init__(self, bot,transcriber):
+    def __init__(self, bot, transcriber):
         self.bot = bot
         self.transcriber = transcriber
         AudioSegment.ffmpeg = "C:"
@@ -64,7 +64,7 @@ class DiscordBot(commands.Cog):
         files = [discord.File(audio.file, f"{user_id}.{sink.encoding}") for user_id, audio in
                  sink.audio_data.items()]  # List down the files.
         text = {}
-        for user_id,audio in sink.audio_data.items():
+        for user_id, audio in sink.audio_data.items():
             file_path = os.path.join(".", f"{user_id}.wav")  # Save as WAV files
 
             # Save the audio data to a .wav file
