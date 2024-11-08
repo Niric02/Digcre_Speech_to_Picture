@@ -17,7 +17,7 @@ if __name__ == "__main__":
     intents = discord.Intents.default()
     intents.message_content = True
 
-    bot = commands.Bot(command_prefix='/', intents=intents)
+    bot = commands.Bot(command_prefix='!', intents=intents)
     transcriber = ReplicateTranscriber(REPLICATEKEY)
 
     bot.add_cog(discbot.DiscordBot(bot,transcriber))

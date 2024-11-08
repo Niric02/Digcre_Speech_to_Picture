@@ -1,7 +1,5 @@
 import os
-import sys
 import discord
-from pydub import AudioSegment
 from discord.ext import commands
 
 
@@ -9,7 +7,6 @@ class DiscordBot(commands.Cog):
     def __init__(self, bot, transcriber):
         self.bot = bot
         self.transcriber = transcriber
-        AudioSegment.ffmpeg = "C:"
 
     connections = {}
 

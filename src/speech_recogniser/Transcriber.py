@@ -1,7 +1,4 @@
 import speech_recognition as sr
-import pyttsx3
-from pydub import AudioSegment
-import soundfile as sf
 
 
 class Transcriber:

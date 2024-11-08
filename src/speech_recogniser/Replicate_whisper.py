@@ -1,5 +1,4 @@
 import os
-import requests
 import replicate
 from dotenv import load_dotenv
 

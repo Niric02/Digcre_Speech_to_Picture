@@ -1,6 +1,5 @@
 import os
 import discord
-from discord import Guild
 from dotenv import load_dotenv
 
 load_dotenv()
