@@ -1,4 +1,6 @@
 import os
+from asyncio import gather
+
 import discord
 from discord import VoiceClient, Guild
 from discord.ext import commands
@@ -83,12 +85,16 @@ class DiscordBot(commands.Cog):
             await self.start_recording(ctx)
         else:
             print("Recording stopped")
-        transcriptions: list[TimestampedTranscription] = []
+        transcription_coroutines = []
         for user_id, audio in sink.audio_data.items():
             file_path = os.path.join(".", f"{user_id}.wav")
             with open(file_path, "wb") as f:
                 f.write(audio.file.getbuffer())
-            transcriptions.extend(self.transcriber.from_file(file_path, user_id))
+            transcription_coroutines.append(self.transcriber.from_file(file_path, user_id))
+        results = await gather(*transcription_coroutines)
+        transcriptions = []
+        for result in results:
+            transcriptions.extend(result)
         self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
 
     def transcriptions_to_text(self, transcriptions: list[TimestampedTranscription], guild: Guild):
