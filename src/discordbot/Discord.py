@@ -8,12 +8,14 @@ from speech_recogniser.ReplicateTranscriber import ReplicateTranscriber, Timesta
 
 
 class DiscordBot(commands.Cog):
-    def __init__(self, bot, transcriber: ReplicateTranscriber, transcription_callback):
+    def __init__(self, bot, transcriber: ReplicateTranscriber, transcription_callback, recording_length: int):
         self.bot = bot
         self.transcriber = transcriber
         self.transcription_callback = transcription_callback
+        self.recording_length = recording_length
 
     connections: dict[int, VoiceClient] = {}
+    recording_in = set()
 
     @commands.Cog.listener()
     async def on_ready(self):
@@ -35,8 +37,8 @@ class DiscordBot(commands.Cog):
         # Check if the bot is connected to a voice channel
         if ctx.guild.id in self.connections:
             vc = self.connections[ctx.guild.id]
-            if vc.recording:
-                vc.stop_recording()
+            if ctx.guild.id in self.recording_in:
+                await self.stop_recording(ctx)
             await vc.disconnect()
             self.connections.pop(ctx.guild.id)
         else:
@@ -53,34 +55,41 @@ class DiscordBot(commands.Cog):
                 await ctx.send("I'm already recording.")
             else:
                 vc.start_recording(
-                    discord.sinks.WaveSink(),
+                    discord.sinks.WaveSink(filters={"time": self.recording_length}),
                     self.once_done,
-                    ctx.guild
+                    ctx
                 )
-                await ctx.send("Started recording!")
-                print("Recording started")
+                if ctx.guild.id not in self.recording_in:
+                    print("Recording started")
+                    self.recording_in.add(ctx.guild.id)
+                    await ctx.send("Started recording!")
 
     @commands.command(name='stop_recording')
     async def stop_recording(self, ctx):
         if ctx.guild.id in self.connections:
             vc = self.connections[ctx.guild.id]
-            if vc.recording:
-                await ctx.send("Stopped recording!")
+            if ctx.guild.id in self.recording_in:
+                self.recording_in.remove(ctx.guild.id)
                 vc.stop_recording()
+                await ctx.send("Stopped recording!")
             else:
                 await ctx.send("I'm not recording.")
         else:
             await ctx.send("I'm not in a voice channel!")
 
-    async def once_done(self, sink: discord.sinks.WaveSink, guild: Guild, *args):
-        print("Recording stopped")
+    async def once_done(self, sink: discord.sinks.WaveSink, ctx: Context, *args):
+        if ctx.guild.id in self.recording_in:
+            print("Processing recording")
+            await self.start_recording(ctx)
+        else:
+            print("Recording stopped")
         transcriptions: list[TimestampedTranscription] = []
         for user_id, audio in sink.audio_data.items():
             file_path = os.path.join(".", f"{user_id}.wav")
             with open(file_path, "wb") as f:
                 f.write(audio.file.getbuffer())
             transcriptions.extend(self.transcriber.from_file(file_path, user_id))
-        self.transcription_callback(self.transcriptions_to_text(transcriptions, guild))
+        self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
 
     def transcriptions_to_text(self, transcriptions: list[TimestampedTranscription], guild: Guild):
         transcriptions.sort(key=lambda x: (x.start, x.end))
