@@ -10,8 +10,9 @@ from speech_recogniser.ReplicateTranscriber import ReplicateTranscriber, Timesta
 
 
 class DiscordBot(commands.Cog):
-    def __init__(self, bot, transcriber: ReplicateTranscriber, transcription_callback, recording_length: int):
+    def __init__(self, bot, transcriber: ReplicateTranscriber, transcription_callback,logger, recording_length: int):
         self.bot = bot
+        self.logger = logger
         self.transcriber = transcriber
         self.transcription_callback = transcription_callback
         self.recording_length = recording_length
@@ -21,7 +22,7 @@ class DiscordBot(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f'{self.bot.user} is connected to the following guilds: {self.bot.guilds}')
+        self.logger.info(f'{self.bot.user} is connected to the following guilds: {self.bot.guilds}')
 
     @commands.command(name='join')
     async def join(self, ctx):
@@ -62,7 +63,7 @@ class DiscordBot(commands.Cog):
                     ctx
                 )
                 if ctx.guild.id not in self.recording_in:
-                    print("Recording started")
+                    self.logger.info("Recording started")
                     self.recording_in.add(ctx.guild.id)
                     await ctx.send("Started recording!")
 
@@ -81,10 +82,10 @@ class DiscordBot(commands.Cog):
 
     async def once_done(self, sink: discord.sinks.WaveSink, ctx: Context, *args):
         if ctx.guild.id in self.recording_in:
-            print("Processing recording")
+            self.logger.info("Processing recording")
             await self.start_recording(ctx)
         else:
-            print("Recording stopped")
+            self.logger.info("Recording stopped")
         transcription_coroutines = []
         for user_id, audio in sink.audio_data.items():
             file_path = os.path.join(".", f"{user_id}.wav")
@@ -95,7 +96,8 @@ class DiscordBot(commands.Cog):
         transcriptions = []
         for result in results:
             transcriptions.extend(result)
-        self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
+        imagefilepath = self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
+        ctx.send(discord.File(imagefilepath))
 
     def transcriptions_to_text(self, transcriptions: list[TimestampedTranscription], guild: Guild):
         transcriptions.sort(key=lambda x: (x.start, x.end))

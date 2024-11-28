@@ -6,8 +6,14 @@ class ReplicatePrompter:
                        "Your job is to take input from a speech to text model and create a prompt for a image generation model. Only Provide the prompt, no niceties required, make it so it is in an anime style. And feel free to be colorful in discrybing the scene"
                        " <|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{prompt}<|eot_id|><|start_header_id|>prompter<|end_header_id|>\n\n")
 
-    def __init__(self,client):
+    def __init__(self,client,logger):
         self.client = client
+        self.logger = logger
+
+    def set_context(self,context):
+        prompt_template = (f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n"
+                            f"{context}"
+                            f" <|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{{prompt}}<|eot_id|><|start_header_id|>prompter<|end_header_id|>\n\n")
 
     def create_input(self,prompt):
         return {
@@ -20,8 +26,13 @@ class ReplicatePrompter:
                 }
 
     def run(self, prompt):
+        output = ""
+
         for event in self.client.stream(
                 "meta/meta-llama-3-70b-instruct",
                 input = self.create_input(prompt),
         ):
-            print(str(event), end="")
+            output += str(event)
+
+        self.logger.info(output)
+        return output
