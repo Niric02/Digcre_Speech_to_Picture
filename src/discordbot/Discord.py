@@ -1,5 +1,6 @@
 import os
 from asyncio import gather
+from datetime import datetime
 
 import discord
 from discord import VoiceClient, Guild
@@ -88,7 +89,7 @@ class DiscordBot(commands.Cog):
             self.logger.info("Recording stopped")
         transcription_coroutines = []
         for user_id, audio in sink.audio_data.items():
-            file_path = os.path.join(".", f"{user_id}.wav")
+            file_path = os.path.join(".", f"../recordings/{user_id}.wav")
             with open(file_path, "wb") as f:
                 f.write(audio.file.getbuffer())
             transcription_coroutines.append(self.transcriber.from_file(file_path, user_id))
@@ -96,8 +97,7 @@ class DiscordBot(commands.Cog):
         transcriptions = []
         for result in results:
             transcriptions.extend(result)
-        imagefilepath = self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
-        ctx.send(discord.File(imagefilepath))
+        self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
 
     def transcriptions_to_text(self, transcriptions: list[TimestampedTranscription], guild: Guild):
         transcriptions.sort(key=lambda x: (x.start, x.end))

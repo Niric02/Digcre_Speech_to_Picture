@@ -167,3 +167,10 @@ cython_debug/
 *.png
 *S.jpeg
 ~$*
+
+#Generateed Files
+images
+logs
+prompts
+recordings
+transcription

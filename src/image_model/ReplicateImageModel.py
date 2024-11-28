@@ -31,10 +31,6 @@ class ReplicateImageModel:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")  # Format: YYYYMMDD_HHMMSS
         filename = f"{timestamp}.jpg"
 
-        #with open(str(filename), "wb") as file:
-        #    file.write(output.read())
-        #    file.close()
-
         # Define the target directory for saving images
         images_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../images")
 

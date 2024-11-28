@@ -1,4 +1,6 @@
 import os
+from datetime import datetime
+
 from dotenv import load_dotenv
 import discord
 import discord.ext.commands as commands
@@ -22,7 +24,20 @@ if __name__ == "__main__":
     RECORDING_LENGTH = int(os.getenv('RECORDING_LENGTH', default="0"))
 
     # Set up logging
-    log_file = "bot_logs.log"
+
+    timestamp = datetime.now().strftime("%Y%m%d")  # Format: YYYYMMDD_HHMMSS
+    filename = f"{timestamp}.log"
+
+    # Define the target directory for saving images
+    images_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../logs")
+
+    # Ensure the directory exists
+    os.makedirs(images_dir, exist_ok=True)
+
+    # Construct the full path to save the image
+    log_file = os.path.join(images_dir, filename)
+
+    log_file = "../logs/bot_logs.log"
     logging.basicConfig(
         format="{asctime} - {levelname} - {message}",
         style="{",
