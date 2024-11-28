@@ -163,7 +163,7 @@ cython_debug/
 /.env
 *.wav
 .idea
-.jpg
-.png
-.jpeg
+*.jpg
+*.png
+*S.jpeg
 ~$*
