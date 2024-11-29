@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
     log_file = "../logs/bot_logs.log"
     logging.basicConfig(
-        format="{asctime} - {levelname} - {message}",
+        format="{asctime} - {name} - {levelname} - {message}",
         style="{",
         datefmt="%Y-%m-%d %H:%M:%S",
         level=logging.INFO,  # Set the logging level
@@ -49,15 +49,10 @@ if __name__ == "__main__":
     file_handler = logging.FileHandler(log_file)
     file_handler.setLevel(logging.INFO)  # Set the file logging level
 
-    # Create a console handler to output logs to the console
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)  # Set the console logging level
-
     # Create a logger and add both handlers
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger('bot')
     logger.setLevel(logging.INFO)  # Set the overall logging level
     logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
 
     # Log initialization messages
     logger.info("Initializing the bot...")

@@ -4,12 +4,7 @@ class ReplicatePrompter:
 
     def __init__(self,client,logger):
         self.client = client
-        self.logger = logger
-
-    def set_context(self,context):
-        prompt_template = (f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n"
-                            f"{context}"
-                            f" <|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{{prompt}}<|eot_id|><|start_header_id|>prompter<|end_header_id|>\n\n")
+        self.logger = logger.getChild('prompter')
 
     def create_input(self,prompt,prompt_template):
         return {
@@ -21,14 +16,11 @@ class ReplicatePrompter:
                 "presence_penalty": 1.15
                 }
 
-    def run(self, prompt,context):
-        output = ""
-
-        for event in self.client.stream(
+    async def run(self, prompt,context):
+        output = await self.client.async_run(
                 "meta/meta-llama-3-70b-instruct",
                 input = self.create_input(prompt,context),
-        ):
-            output += str(event)
-
-        self.logger.info(output)
-        return output
+        )
+        prompt = "".join(output)
+        self.logger.info(f"llm: {prompt}")
+        return prompt

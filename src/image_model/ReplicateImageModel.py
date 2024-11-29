@@ -7,23 +7,23 @@ import replicate
 class ReplicateImageModel:
     def __init__(self, client, logger):
         self.client = client
-        self.logger = logger
+        self.logger = logger.getChild('image')
 
     def create_imput(self, prompt):
-        input =  {"raw": False,
-                      "prompt": prompt,
-                      "aspect_ratio": "3:2",
-                      "output_format": "jpg",
-                      "safety_tolerance": 2,
-                      "image_prompt_strength": 0.1
-                      }
+        input = {"raw": False,
+                 "prompt": prompt,
+                 "aspect_ratio": "3:2",
+                 "output_format": "jpg",
+                 "safety_tolerance": 2,
+                 "image_prompt_strength": 0.1,
+                 "seed": 1234
+                 }
         return input
 
-    def run(self, prompt):
-
+    async def run(self, prompt):
         input = self.create_imput(prompt)
         self.logger.info(f"generating Image from prompt: {input}")
-        output = self.client.run(
+        output = await self.client.async_run(
             "black-forest-labs/flux-1.1-pro-ultra",
             input=input,
         )

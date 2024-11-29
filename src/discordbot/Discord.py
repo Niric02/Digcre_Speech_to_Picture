@@ -13,7 +13,7 @@ from speech_recogniser.ReplicateTranscriber import ReplicateTranscriber, Timesta
 class DiscordBot(commands.Cog):
     def __init__(self, bot, transcriber: ReplicateTranscriber, transcription_callback,logger, recording_length: int):
         self.bot = bot
-        self.logger = logger
+        self.logger = logger.getChild('discord')
         self.transcriber = transcriber
         self.transcription_callback = transcription_callback
         self.recording_length = recording_length
@@ -89,6 +89,7 @@ class DiscordBot(commands.Cog):
             self.logger.info("Recording stopped")
         transcription_coroutines = []
         for user_id, audio in sink.audio_data.items():
+            self.logger.info(f"start Transcribing {user_id}")
             file_path = os.path.join(".", f"../recordings/{user_id}.wav")
             with open(file_path, "wb") as f:
                 f.write(audio.file.getbuffer())
@@ -97,10 +98,10 @@ class DiscordBot(commands.Cog):
         transcriptions = []
         for result in results:
             transcriptions.extend(result)
-        self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
+        await self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
 
     def transcriptions_to_text(self, transcriptions: list[TimestampedTranscription], guild: Guild):
-        self.logger.info("start Transcribing ...")
+        self.logger.info("joining transcriptions")
         transcriptions.sort(key=lambda x: (x.start, x.end))
         user_identifiers = set([transcription.identifier for transcription in transcriptions])
         user_names = {ident: self.get_name(guild, ident) for ident in user_identifiers}

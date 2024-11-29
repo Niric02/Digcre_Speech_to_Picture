@@ -8,21 +8,21 @@ import os
 
 class ImageFromSpeech:
     def __init__(self, replicate_client, logger):
-        self.logger = logger
+        self.logger = logger.getChild("image-from-speech")
         self.replicate_client = replicate_client
         self.llm = ReplicatePrompter(self.replicate_client, logger)
         self.imager = ReplicateImageModel(self.replicate_client, logger)
         self.prompt_history = []
 
-    def generate_image_from_transcription(self, transcript: str):
+    async def generate_image_from_transcription(self, transcript: str):
         context = self.generate_prompt_template()
         self.append_transcription_to_file(transcript)
         self.prompt_history.append({"role": "user", "content": transcript})
         self.logger.info(transcript)
-        prompt = self.llm.run(transcript,context)
+        prompt = await self.llm.run(transcript,context)
         self.append_prompt_to_file(prompt)
         self.prompt_history.append({"role": "prompter", "content": prompt})
-        image_path = self.imager.run(prompt)
+        image_path = await self.imager.run(prompt)
         return image_path
 
     def append_transcription_to_file(self,transcription):

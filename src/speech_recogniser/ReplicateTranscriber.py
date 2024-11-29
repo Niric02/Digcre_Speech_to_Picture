@@ -17,7 +17,7 @@ class ReplicateTranscriber:
             language = "auto"
         self.client = client
         self.language = language
-        self.logger = logger
+        self.logger = logger.getChild('transcriber')
 
     async def from_file(self, file_path, identifier=None) -> list[TimestampedTranscription]:
         audio = open(file_path, "rb")
@@ -29,7 +29,7 @@ class ReplicateTranscriber:
             "openai/whisper:cdd97b257f93cb89dede1c7584e3f3dfc969571b357dbcee08e793740bedd854",
             input=replicate_input
         )
-        self.logger.info("Output:", output)
+        self.logger.info(f"Output: {output}")
         return [TimestampedTranscription(text=segment['text'],
                                          start=segment['start'],
                                          end=segment['end'],
