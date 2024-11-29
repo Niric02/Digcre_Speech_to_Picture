@@ -100,6 +100,7 @@ class DiscordBot(commands.Cog):
         self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
 
     def transcriptions_to_text(self, transcriptions: list[TimestampedTranscription], guild: Guild):
+        self.logger.info("start Transcribing ...")
         transcriptions.sort(key=lambda x: (x.start, x.end))
         user_identifiers = set([transcription.identifier for transcription in transcriptions])
         user_names = {ident: self.get_name(guild, ident) for ident in user_identifiers}

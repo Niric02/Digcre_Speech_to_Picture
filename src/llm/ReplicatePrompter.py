@@ -26,7 +26,7 @@ class ReplicatePrompter:
 
         for event in self.client.stream(
                 "meta/meta-llama-3-70b-instruct",
-                input = self.create_input(prompt),
+                input = self.create_input(prompt,context),
         ):
             output += str(event)
 

@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from src.image_model.ReplicateImageModel import ReplicateImageModel
-from src.llm.ReplicatePrompter import ReplicatePrompter
-from src.speech_recogniser.ReplicateTranscriber import ReplicateTranscriber
+from image_model.ReplicateImageModel import ReplicateImageModel
+from llm.ReplicatePrompter import ReplicatePrompter
+from speech_recogniser.ReplicateTranscriber import ReplicateTranscriber
 import os
 
 
@@ -15,10 +15,11 @@ class ImageFromSpeech:
         self.prompt_history = []
 
     def generate_image_from_transcription(self, transcript: str):
+        context = self.generate_prompt_template()
         self.append_transcription_to_file(transcript)
         self.prompt_history.append({"role": "user", "content": transcript})
         self.logger.info(transcript)
-        prompt = self.llm.run(transcript)
+        prompt = self.llm.run(transcript,context)
         self.append_prompt_to_file(prompt)
         self.prompt_history.append({"role": "prompter", "content": prompt})
         image_path = self.imager.run(prompt)
@@ -63,9 +64,11 @@ class ImageFromSpeech:
     def generate_prompt_template(self):
         context = os.getenv('CONTEXT')
 
+        prompt_template = f"<|start_header_id|>system<|end_header_id|>\n\n{context}"
+
         for history in self.prompt_history:
+            prompt_template += f"<|eot_id|><|start_header_id|>{history['role']}<|end_header_id|>\n\n{history['content']}"
 
+        prompt_template += f" <|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{{prompt}}<|eot_id|><|start_header_id|>prompter<|end_header_id|>\n\n"  # End of context
 
-        prompt_template = (f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n"
-                            f"{context}"
-                            f" <|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{{prompt}}<|eot_id|><|start_header_id|>prompter<|end_header_id|>\n\n")
+        return prompt_template

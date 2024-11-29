@@ -11,7 +11,7 @@ from image_model.ReplicateImageModel import ReplicateImageModel
 import replicate
 import logging
 
-from src.speech_to_picture.ImageFromSpeech import ImageFromSpeech
+from speech_to_picture.ImageFromSpeech import ImageFromSpeech
 
 if __name__ == "__main__":
     load_dotenv()
