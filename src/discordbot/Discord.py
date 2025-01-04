@@ -98,7 +98,8 @@ class DiscordBot(commands.Cog):
         transcriptions = []
         for result in results:
             transcriptions.extend(result)
-        await self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
+        image_path = await self.transcription_callback(self.transcriptions_to_text(transcriptions, ctx.guild))
+        await ctx.channel.send(file=discord.File(image_path))
 
     def transcriptions_to_text(self, transcriptions: list[TimestampedTranscription], guild: Guild):
         self.logger.info("joining transcriptions")
