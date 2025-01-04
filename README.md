@@ -9,6 +9,11 @@ The DIGCRE Project from Cyrill Tschopp & Alexander Wyss.
 - [Discord Bot](https://discord.com/developers/applications)
   - must be added to a guild with all privileges
 
+# Prepperation
+
+- Adapt Context in .env file
+  - cange all parts that are in <> brackets
+
 # Run
 
 1. Optional: Create python virtual environment and activate it
