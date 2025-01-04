@@ -1,25 +1,17 @@
-from datetime import datetime
+import logging
 import os
+from datetime import datetime
 
 import replicate
 
 
 class ReplicateImageModel:
-    def __init__(self, client, logger):
+    def __init__(self, client: replicate.Client, logger: logging.Logger):
         self.client = client
         self.logger = logger.getChild('image')
 
-    def create_imput(self, prompt):
-        #input = {"raw": False,
-        #         "prompt": prompt,
-        #         "aspect_ratio": "3:2",
-        #         "output_format": "jpg",
-        #         "safety_tolerance": 6,
-        #         "image_prompt_strength": 0.1,
-        #         "seed": 6969693245266
-        #         }
-
-        input = {
+    def create_input(self, prompt):
+        return {
             "prompt": prompt,
             "go_fast": True,
             "guidance": 3.5,
@@ -32,32 +24,25 @@ class ReplicateImageModel:
             "seed": 6969693245266,
             "disable_safety_checker": True
         }
-        return input
 
     async def run(self, prompt):
-        input = self.create_imput(prompt)
-        self.logger.info(f"generating Image from prompt: {input}")
+        prompt_input = self.create_input(prompt)
+        self.logger.info(f"generating Image from prompt: {prompt_input}")
         output = await self.client.async_run(
-            #"black-forest-labs/flux-1.1-pro-ultra",
+            # "black-forest-labs/flux-1.1-pro-ultra", # alternative model, nsfw problems
             "black-forest-labs/flux-dev",
-            input=input,
+            input=prompt_input,
         )
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")  # Format: YYYYMMDD_HHMMSS
         filename = f"{timestamp}.jpg"
 
-        # Define the target directory for saving images
         images_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../images")
-
-        # Ensure the directory exists
         os.makedirs(images_dir, exist_ok=True)
-
-        # Construct the full path to save the image
         file_path = os.path.join(images_dir, filename)
 
         print(output)
 
-        # Write the image to the file
         with open(file_path, "wb") as file:
             file.write(output[0].read())
 

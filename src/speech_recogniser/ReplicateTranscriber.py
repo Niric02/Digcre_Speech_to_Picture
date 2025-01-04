@@ -1,3 +1,4 @@
+import logging
 from dataclasses import dataclass
 
 import replicate
@@ -12,7 +13,7 @@ class TimestampedTranscription:
 
 
 class ReplicateTranscriber:
-    def __init__(self, client, logger, language=None):
+    def __init__(self, client: replicate.Client, logger: logging.Logger, language=None):
         if language is None:
             language = "auto"
         self.client = client

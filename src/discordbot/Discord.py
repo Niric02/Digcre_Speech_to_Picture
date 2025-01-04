@@ -1,6 +1,5 @@
 import os
 from asyncio import gather
-from datetime import datetime
 
 import discord
 from discord import VoiceClient, Guild
@@ -11,7 +10,7 @@ from speech_recogniser.ReplicateTranscriber import ReplicateTranscriber, Timesta
 
 
 class DiscordBot(commands.Cog):
-    def __init__(self, bot, transcriber: ReplicateTranscriber, transcription_callback,logger, recording_length: int):
+    def __init__(self, bot, transcriber: ReplicateTranscriber, transcription_callback, logger, recording_length: int):
         self.bot = bot
         self.logger = logger.getChild('discord')
         self.transcriber = transcriber
@@ -38,7 +37,6 @@ class DiscordBot(commands.Cog):
     @commands.command(name='leave')
     async def leave(self, ctx):
         """Command for the bot to leave the voice channel."""
-        # Check if the bot is connected to a voice channel
         if ctx.guild.id in self.connections:
             vc = self.connections[ctx.guild.id]
             if ctx.guild.id in self.recording_in:
@@ -90,7 +88,9 @@ class DiscordBot(commands.Cog):
         transcription_coroutines = []
         for user_id, audio in sink.audio_data.items():
             self.logger.info(f"start Transcribing {user_id}")
-            file_path = os.path.join(".", f"../recordings/{user_id}.wav")
+            recordings_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../recordings")
+            os.makedirs(recordings_dir, exist_ok=True)
+            file_path = os.path.join(recordings_dir, f"{user_id}.wav")
             with open(file_path, "wb") as f:
                 f.write(audio.file.getbuffer())
             transcription_coroutines.append(self.transcriber.from_file(file_path, user_id))

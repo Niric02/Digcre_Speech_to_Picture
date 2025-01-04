@@ -18,7 +18,6 @@ class Transcriber:
         # Start continuous recognition
         result = speech_recognizer.start_continuous_recognition_async()
 
-
         speech_recognizer.session_stopped.connect(lambda evt: result.set_result(None))
         # Wait for recognition to finish
         return result.get()

@@ -1,16 +1,13 @@
+import logging
 import os
-from datetime import datetime
 
-from dotenv import load_dotenv
 import discord
 import discord.ext.commands as commands
+import replicate
+from dotenv import load_dotenv
+
 import discordbot.Discord as discbot
 from speech_recogniser.ReplicateTranscriber import ReplicateTranscriber
-from llm.ReplicatePrompter import ReplicatePrompter
-from image_model.ReplicateImageModel import ReplicateImageModel
-import replicate
-import logging
-
 from speech_to_picture.ImageFromSpeech import ImageFromSpeech
 
 if __name__ == "__main__":
@@ -23,21 +20,12 @@ if __name__ == "__main__":
     LANGUAGE = os.getenv('LANGUAGE', default="auto")
     RECORDING_LENGTH = int(os.getenv('RECORDING_LENGTH', default="0"))
 
-    # Set up logging
-
-    timestamp = datetime.now().strftime("%Y%m%d")  # Format: YYYYMMDD_HHMMSS
-    filename = f"{timestamp}.log"
-
-    # Define the target directory for saving images
-    images_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../logs")
-
-    # Ensure the directory exists
-    os.makedirs(images_dir, exist_ok=True)
+    logs_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "./logs")
+    os.makedirs(logs_dir, exist_ok=True)
 
     # Construct the full path to save the image
-    log_file = os.path.join(images_dir, filename)
+    log_file = os.path.join(logs_dir, "bot_logs.log")
 
-    log_file = "../logs/bot_logs.log"
     logging.basicConfig(
         format="{asctime} - {name} - {levelname} - {message}",
         style="{",
@@ -60,11 +48,12 @@ if __name__ == "__main__":
     replicate_client = replicate.Client(REPLICATEKEY)
     intents = discord.Intents.all()
 
-    imager = ImageFromSpeech(replicate_client,logger)
+    imager = ImageFromSpeech(replicate_client, logger)
 
     bot = commands.Bot(command_prefix='!', intents=intents)
     transcriber = ReplicateTranscriber(replicate_client, logger, LANGUAGE)
 
-    bot.add_cog(discbot.DiscordBot(bot, transcriber, imager.generate_image_from_transcription,logger, RECORDING_LENGTH))
+    bot.add_cog(
+        discbot.DiscordBot(bot, transcriber, imager.generate_image_from_transcription, logger, RECORDING_LENGTH))
 
     bot.run(TOKEN)
