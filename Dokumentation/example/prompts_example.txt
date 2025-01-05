@@ -1,0 +1,242 @@
+prompt: [Scene Description:
+A lively tavern scene, warm and inviting, with the atmosphere of camaraderie and shared tales. The pub is dimly lit, with candles and lanterns casting a golden glow on the wooden tables and chairs. The air is thick with the smell of ale, roasting meats, and laughter.
+
+Character Appearance:
+Ali: Ali stands at the bar, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar sits on the bar stool next to Ali, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali leans against the bar, their eyes fixed intently on Baltasar as they recount their tale of adventure. Baltasar sits with a relaxed posture, sipping his fancy cocktail with an umbrella, his gray eyes sparkling with amusement as he listens to Ali's story.
+
+Focus:
+The central element of the image is the warm camaraderie between Ali and Baltasar, surrounded by the lively atmosphere of the tavern, with the umbrella-adorned cocktail serving as a symbol of their celebratory mood.]
+
+prompt: [Scene Description:
+The same lively tavern scene, with Ali and Baltasar continuing their conversation, the atmosphere still warm and inviting, but with a hint of playful banter and teasing.
+
+Character Appearance:
+Ali: Ali stands at the bar, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar sits on the bar stool next to Ali, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali chuckles, a hint of amusement in their eyes, as they listen to Baltasar's playful jabs about their handling of the boar. Baltasar takes a sip of his cocktail, his gray eyes sparkling with mischief, as he continues to tease Ali about their bravery.
+
+Focus:
+The central element of the image is the playful interaction between Ali and Baltasar, with Baltasar's teasing expression and Ali's amused reaction taking center stage, surrounded by the lively atmosphere of the tavern.]
+
+prompt: [Scene Description:
+A bustling town square, with the contract board at its center, surrounded by various stalls and shops. The atmosphere is lively, with people milling about, discussing potential jobs and opportunities.
+
+Character Appearance:
+Ali: Ali stands beside Baltasar, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar walks alongside Ali, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali follows Baltasar as they approach the contract board, their eyes scanning the various postings and notices. Baltasar walks with a purposeful stride, his gray eyes fixed on the board as he searches for a suitable contract.
+
+Focus:
+The central element of the image is the contract board, with Ali and Baltasar standing before it, surrounded by the bustling town square. The board itself is the main focus, with various contracts and postings visible, including the one for eliminating another boar.]
+
+prompt: [Scene Description:
+The same bustling town square, with the contract board at its center, surrounded by various stalls and shops. The atmosphere is lively, with people milling about, discussing potential jobs and opportunities.
+
+Character Appearance:
+Ali: Ali stands beside Baltasar, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar stands alongside Ali, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali nods enthusiastically, their eyes shining with excitement, as they consider the contract to kill an ogre. Baltasar's gray eyes light up with interest, his expression thoughtful, as he weighs the risks and rewards of the job.
+
+Focus:
+The central element of the image is the contract board, with the posting for the ogre contract prominently displayed, and Ali and Baltasar standing before it, surrounded by the bustling town square. The atmosphere is one of anticipation and excitement, as the two adventurers consider taking on the challenging job.]
+
+prompt: [Scene Description:
+The same bustling town square, with the contract board at its center, surrounded by various stalls and shops. The atmosphere is lively, with people milling about, discussing potential jobs and opportunities. Ali and Baltasar stand before the contract board, intently studying the posting for the ogre contract.
+
+Character Appearance:
+Ali: Ali stands beside Baltasar, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar stands alongside Ali, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali leans in, their eyes scanning the contract posting, as they discuss the details of the job with Baltasar. Baltasar's gray eyes are fixed intently on the posting, his expression thoughtful, as he considers the location and potential challenges of the job.
+
+Focus:
+The central element of the image is the contract posting, with Ali and Baltasar standing before it, surrounded by the bustling town square. The atmosphere is one of focused attention, as the two adventurers carefully review the details of the job and plan their approach.]
+
+prompt: [Scene Description:
+A dense and vibrant forest, with towering trees blocking out most of the sunlight, casting dappled shadows on the forest floor. The atmosphere is quiet and eerie, with the only sounds being the rustling of leaves and the distant call of a bird.
+
+Character Appearance:
+Ali: Ali walks through the forest, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar walks alongside Ali, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali walks through the forest, their eyes scanning the surroundings, searching for any sign of the ogre. Baltasar moves silently alongside Ali, his gray eyes fixed on the path ahead, his senses on high alert for any potential danger.
+
+Focus:
+The central element of the image is the dense and eerie forest, with Ali and Baltasar walking through it, surrounded by the towering trees and the quiet atmosphere. The focus is on the sense of anticipation and tension, as the two adventurers move closer to their goal.]
+
+prompt: [Scene Description:
+A small clearing in the dense forest, with a few scattered trees and a thick underbrush of ferns and bushes. The atmosphere is tense and foreboding, with an eerie silence hanging in the air.
+
+Character Appearance:
+Ali: Ali stands at the edge of the clearing, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar stands beside Ali, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali surveys the clearing, their eyes scanning the surroundings, searching for any sign of the ogre or potential danger. Baltasar stands watchfully beside Ali, his gray eyes fixed on the treeline, his senses on high alert for any sign of movement.
+
+Focus:
+The central element of the image is the small clearing in the forest, with Ali and Baltasar standing at its edge, surrounded by the tense and foreboding atmosphere. The focus is on the sense of anticipation and caution, as the two adventurers prepare to face whatever dangers lie ahead.]
+
+prompt: [Scene Description:
+The same small clearing in the dense forest, but now with a wild boar charging towards Ali and Baltasar. The atmosphere is intense and chaotic, with the sound of rustling leaves and snapping twigs filling the air.
+
+Character Appearance:
+Ali: Ali stands steadfast in front of the boar, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake. They hold their sword at the ready, prepared to defend themselves against the charging boar.
+
+Baltasar: Baltasar hides behind a nearby tree, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity. He peers out from behind the tree, his gray eyes fixed on the boar, his bow at the ready.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali stands their ground, sword at the ready, as the boar charges towards them. Baltasar hides behind the tree, his bow drawn and aimed at the boar, prepared to strike from a safe distance.
+
+Focus:
+The central element of the image is the intense confrontation between Ali and the wild boar, with Baltasar hiding in the background, ready to provide support. The focus is on the sense of urgency and danger, as the two adventurers face off against the ferocious beast.]
+
+prompt: [Scene Description:
+The same small clearing in the dense forest, but now with the boar lying dead on the ground, a single arrow lodged in its eyeball. The atmosphere is one of relief and triumph, with the sound of heavy breathing and the rustling of leaves filling the air.
+
+Character Appearance:
+Ali: Ali stands over the boar, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake. They hold their sword still at the ready, though now with a relaxed grip.
+
+Baltasar: Baltasar emerges from behind the tree, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity. He approaches the boar, his gray eyes fixed on the arrow lodged in its eyeball, a hint of pride and satisfaction on his face.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali stands over the boar, their sword still at the ready, though now with a relaxed grip, as they catch their breath. Baltasar approaches the boar, his eyes fixed on the arrow lodged in its eyeball, a hint of pride and satisfaction on his face.
+
+Focus:
+The central element of the image is the dead boar, with the arrow lodged in its eyeball, and Ali and Baltasar standing over it, surrounded by the atmosphere of relief and triumph. The focus is on the sense of accomplishment and camaraderie, as the two adventurers share a moment of victory.]
+
+prompt: [Scene Description:
+A large clearing in the dense forest, with a few scattered trees and a thick underbrush of ferns and bushes. The atmosphere is tense and foreboding, with an eerie silence hanging in the air.
+
+Character Appearance:
+Ali: Ali walks slowly towards the center of the clearing, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar hides behind a thick cluster of bushes, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity. He peers out from behind the bushes, his gray eyes fixed on Ali, ready to provide support.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali walks slowly towards the center of the clearing, their eyes scanning the surroundings, searching for any sign of the ogre. Baltasar hides behind the bushes, his eyes fixed on Ali, ready to provide support and strike from a safe distance.
+
+Focus:
+The central element of the image is the tense and foreboding clearing, with Ali walking slowly towards the center, and Baltasar hiding behind the bushes, ready to provide support. The focus is on the sense of anticipation and caution, as the two adventurers prepare to face whatever dangers lie ahead.]
+
+prompt: [Scene Description:
+A large clearing in the dense forest, with a few scattered trees and a thick underbrush of ferns and bushes. The atmosphere is tense and foreboding, with an eerie silence hanging in the air. A big, fat ogre emerges from a cave at the edge of the clearing, its massive body lumbering towards Ali.
+
+Character Appearance:
+Ali: Ali stands still in the center of the clearing, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar hides behind a thick cluster of bushes, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity. He peers out from behind the bushes, his gray eyes fixed on the ogre, his bow drawn and aimed.
+
+Ogre: The ogre is massive and imposing, its thick, green skin covered in warts and scars. Its eyes are a beady yellow, fixed intently on Ali as it lumbers towards them.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali stands still in the center of the clearing, their eyes fixed on the ogre as it approaches. Baltasar hides behind the bushes, his bow drawn and aimed at the ogre, ready to strike from a safe distance.
+
+Focus:
+The central element of the image is the massive ogre, lumbering towards Ali in the center of the clearing. The focus is on the sense of tension and anticipation, as the two adventurers prepare to face off against the formidable foe.]
+
+prompt: [Scene Description:
+A large clearing in the dense forest, with a few scattered trees and a thick underbrush of ferns and bushes. The atmosphere is intense and chaotic, with the sound of the ogre's screech echoing through the air. The ogre charges towards Ali, its massive club raised above its head, ready to strike.
+
+Character Appearance:
+Ali: Ali stands still in the center of the clearing, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar hides behind a thick cluster of bushes, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity. He peers out from behind the bushes, his gray eyes fixed on the ogre, his bow drawn and aimed.
+
+Ogre: The ogre is massive and imposing, its thick, green skin covered in warts and scars. Its eyes are a beady yellow, fixed intently on Ali as it charges towards them. Its massive club is raised above its head, ready to strike.
+
+Character Descriptions:
+Ali exudes confidence and determination, with a steady, watchful gaze that hints at their years of training and experience. They are quick to offer a reassuring smile to allies but wear a focused, almost stern expression in moments of tension.
+
+Baltasar carries an air of quiet self-assurance, often masking his thoughts behind a sly smirk or an expressionless façade. His movements are calculated and cat-like, blending seamlessly into the shadows.
+
+Character Actions:
+Ali stands still in the center of the clearing, their eyes fixed on the ogre as it charges towards them. Baltasar hides behind the bushes, his bow drawn and aimed at the ogre, ready to strike from a safe distance.
+
+Focus:
+The central element of the image is the intense and chaotic scene, with the ogre charging towards Ali and Baltasar preparing to strike from behind the bushes. The focus is on the sense of urgency and danger, as the two adventurers face off against the formidable foe.]
+
+prompt: [Scene Description:
+A large clearing in the dense forest, with a few scattered trees and a thick underbrush of ferns and bushes. The atmosphere is intense and chaotic, with the sound of clashing steel and the ogre's screech echoing through the air. Ali charges towards the ogre, swinging their sword in a wide arc, trying to strike at its neck. Baltasar shoots an arrow from behind the bushes, but it narrowly misses Ali's head, flying close by their ear.
+
+Character Appearance:
+Ali: Ali charges towards the ogre, their auburn hair tied loosely at the nape of their neck, with sharp, angular features and emerald green eyes flecked with gold. They wear practical leather armor reinforced with plates over vital areas, and a flowing green cloak with silver embroidery that symbolizes their elven lineage. A simple braided cord around their wrist hints at a sentimental keepsake.
+
+Baltasar: Baltasar hides behind a thick cluster of bushes, dressed in dark, form-fitting clothing designed for silent movement: a black leather vest over a dark gray tunic, paired with reinforced boots and fingerless gloves. A dark scarf is often wrapped around his neck and lower face for anonymity. He peers out from behind the bushes, his gray eyes fixed on the]
+
+prompt: []
+
