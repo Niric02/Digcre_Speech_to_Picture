@@ -21,7 +21,7 @@ class ReplicateImageModel:
             "output_quality": 80,
             "prompt_strength": 0.8,
             "num_inference_steps": 28,
-            "seed": 6969693245266,
+            "seed": 2,
             "disable_safety_checker": True
         }
 

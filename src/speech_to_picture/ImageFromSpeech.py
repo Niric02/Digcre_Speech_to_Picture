@@ -55,7 +55,7 @@ class ImageFromSpeech:
         prompt_template = f"<|start_header_id|>system<|end_header_id|>\n\n{context}"
 
         for history in self.prompt_history:
-            prompt_template += f"<|eot_id|><|start_header_id|>{history['role']}<|end_header_id|>\n\n{history['content']}"
+            prompt_template += f"<|eot_id|><|start_header_id|>{history['role'][-5:]}<|end_header_id|>\n\n{history['content'][-5:]}"
 
         prompt_template += f" <|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{{prompt}}<|eot_id|><|start_header_id|>prompter<|end_header_id|>\n\n"  # End of context
 
